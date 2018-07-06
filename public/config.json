@@ -20,17 +20,11 @@
                     "emailAddress": "{{InteractionDefaults.Email}}"
                 },
                 {
-                    "EmailAddress2": "{{Contact.Attribute.JKTest.FirstName}}"
-                },
-                {
-                    "EmailAddress5": "{{Contact.Attribute.JKTest.Email}}"
+                    "EmailAddress2": "{{Contact.Attribute.JKTest.EmailAddress}}"
                 },
                 {                   
-                    "EmailAddress6": "{{Contact.Attribute.JKTest.EmailAddress}}"
-                },
-                {
-                    "EmailAddress7": "{{Contact.Attribute.JKTest}}"
-                }									
+                    "EmailAddress6": "{{Contact.Attribute.JKTest.FirstName}}"
+                }								
 			],
           "outArguments": [],
           "url": "https://compassdigital-jb-activity.herokuapp.com/journeybuilder/execute",
