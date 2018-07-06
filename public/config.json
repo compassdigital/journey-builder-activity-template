@@ -20,10 +20,10 @@
                     "emailAddress": "{{InteractionDefaults.Email}}"
                 },
                 {
-                    "EmailAddress2": "{{Contact.Attribute.JKTest.EmailAddress}}"
+                    "EmailAddress2": "{{Contact.Attribute.JulioTest.EmailAddress}}"
                 },
                 {                   
-                    "EmailAddress6": "{{Contact.Attribute.JKTest.FirstName}}"
+                    "FirstName": "{{Contact.Attribute.JulioTest.FirstName}}"
                 }								
 			],
           "outArguments": [],
