@@ -73,7 +73,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "emailAddress": "{{InteractionDefaults.Email}}",
-            "email": "{{Contact.Default.Email}}",
+            "email": "{{Contact}}",
             "e": "{{Contact.Attribute.JKTest.EmailAddress}}",
             "e2": "{{Contact.Attribute.JKTestList.EmailAddress}}",
             "e3": "{{Contact.Attribute.JKTestList.Email Address}}"
