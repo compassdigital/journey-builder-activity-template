@@ -17,8 +17,9 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{Contact.Attribute.voucherify.EmailAddress}}",
-                    "email": "{{Contact.Default.Email}}"
+                    "emailAddress": "{{Contact.Attribute.voucherify.JK Test List.EmailAddress}}",
+                    "email": "{{Contact.Default.Email}}",
+                    "e": "{{Contact.Attribute.JK Test List.EmailAddress}}"
                 }									
 			],
           "outArguments": [],
