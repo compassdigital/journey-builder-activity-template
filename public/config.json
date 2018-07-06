@@ -20,22 +20,22 @@
                     "emailAddress": "{{InteractionDefaults.Email}}"
                 },
                 {
-                    "EmailAddress": "{{Contact.Attribute.JKTest.FirstName}}"
+                    "EmailAddress2": "{{Contact.Attribute.JKTest.FirstName}}"
                 },
                 {
-                    "EmailAddress2": "{{Contact.Attribute.JKTest.['Email Address']}}"
+                    "EmailAddress3": "{{Contact.Attribute.JKTest.['Email Address']}}"
                 },
                 {
-                    "EmailAddress4": "{{Contact.Attribute.JKTest.Email}}"
+                    "EmailAddress4": "{{Contact.Attribute.JKTest.[\"Email Address\"]]}}"
                 },
                 {
-                    "e": "{{Contact.Attribute.JKTest.Email}}"
+                    "EmailAddress5": "{{Contact.Attribute.JKTest.Email}}"
                 },
                 {                   
-                    "e2": "{{Contact.Attribute.JKTest.EmailAddress}}"
+                    "EmailAddress6": "{{Contact.Attribute.JKTest.EmailAddress}}"
                 },
                 {
-                    "e3": "{{Contact.Attribute.JKTest}}"
+                    "EmailAddress7": "{{Contact.Attribute.JKTest}}"
                 }									
 			],
           "outArguments": [],
