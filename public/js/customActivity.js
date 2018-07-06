@@ -66,12 +66,12 @@ define([
     }
 
     function save() {
-        var postcardURLValue = $('#postcard-url').val();
-        var postcardTextValue = $('#postcard-text').val();
+        // var postcardURLValue = $('#postcard-url').val();
+        // var postcardTextValue = $('#postcard-text').val();
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "emailAddress": "{{InteractionDefaults.Email}}"
+            "emailAddress": "{{Contact.Attribute.voucherify.EmailAddress}}"
         }];
         
         payload['metaData'].isConfigured = true;
