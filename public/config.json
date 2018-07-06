@@ -23,12 +23,6 @@
                     "EmailAddress2": "{{Contact.Attribute.JKTest.FirstName}}"
                 },
                 {
-                    "EmailAddress3": "{{Contact.Attribute.JKTest.['Email Address']}}"
-                },
-                {
-                    "EmailAddress4": "{{Contact.Attribute.JKTest.[\"Email Address\"]]}}"
-                },
-                {
                     "EmailAddress5": "{{Contact.Attribute.JKTest.Email}}"
                 },
                 {                   
