@@ -19,7 +19,7 @@
 				{
                     "emailAddress": "{{InteractionDefaults.Email}}",
                     "email": "{{Contact.Default.Email}}",
-                    "e": "{{Contact.Attribute.JK Test List.EmailAddress}}"
+                    "e": "{{Contact.Attribute.JKTest.EmailAddress}}"
                 }									
 			],
           "outArguments": [],
