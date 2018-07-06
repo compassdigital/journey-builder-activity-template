@@ -17,10 +17,18 @@
         "execute": {
            "inArguments":[
 				{
-                    "emailAddress": "{{InteractionDefaults.Email}}",
-                    "email": "{{Contact}}",
-                    "e": "{{Contact.Attribute.JKTest.EmailAddress}}",
-                    "e2": "{{Contact.Attribute.JKTestList.EmailAddress}}",
+                    "emailAddress": "{{InteractionDefaults.Email}}"
+                },
+                {
+                    "email": "{{Contact.Default.Email}}"
+                },
+                {
+                    "e": "{{Contact.Attribute.JKTest.EmailAddress}}"
+                },
+                {                   
+                    "e2": "{{Contact.Attribute.JKTestList.EmailAddress}}"
+                },
+                {
                     "e3": "{{Contact.Attribute.JKTestList.Email-Address}}"
                 }									
 			],

@@ -70,14 +70,14 @@ define([
         // var postcardTextValue = $('#postcard-text').val();
 
         console.log('save()');
-        payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens,
-            "emailAddress": "{{InteractionDefaults.Email}}",
-            "email": "{{Contact}}",
-            "e": "{{Contact.Attribute.JKTest.EmailAddress}}",
-            "e2": "{{Contact.Attribute.JKTestList.EmailAddress}}",
-            "e3": "{{Contact.Attribute.JKTestList.Email Address}}"
-        }];
+        // payload['arguments'].execute.inArguments = [{
+        //     "tokens": authTokens,
+        //     "emailAddress": "{{InteractionDefaults.Email}}",
+        //     "email": "{{Contact}}",
+        //     "e": "{{Contact.Attribute.JKTest.EmailAddress}}",
+        //     "e2": "{{Contact.Attribute.JKTestList.EmailAddress}}",
+        //     "e3": "{{Contact.Attribute.JKTestList.Email Address}}"
+        // }];
         
         payload['metaData'].isConfigured = true;
 
