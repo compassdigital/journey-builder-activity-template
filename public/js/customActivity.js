@@ -15,7 +15,28 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', save);
-   
+    connection.on('requestedInteractionDefaults', function(settings) { 
+        if( settings.error ) {
+             console.error( settings.error );
+        } else {
+             defaults = settings;
+        }
+        console.log('defaults', defaults);
+        var eventKey = retrieveKey(defaults.email[0]);
+        console.log('EventKey', eventKey);
+    });
+
+    // Assume that the string of the format  
+    // '{{Event.ContactEvent-72af1529-1d7d-821e-2a08-34fb5068561d."EmailAddress"}}' 
+    // It will return 'ContactEvent-72af1529-1d7d-821e-2a08-34fb5068561d' 
+    function retrieveKey (string) {
+        var pos1 = string.indexOf(".");
+        var pos2 = string.indexOf(".", (pos1 + 1) );
+        var result = string.substring( (pos1 + 1) , pos2);
+        return result;
+    }
+
+
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
@@ -23,6 +44,7 @@ define([
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
 
+        
     }
 
     function initialize(data) {
