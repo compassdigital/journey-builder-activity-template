@@ -26,9 +26,6 @@
                     "EmailAddress2": "{{Contact.Attribute.[\"Email Address\"]}}"
                 },
                 {
-                    "EmailAddress3": '{{Contact.Attribute.["Email Address"]}}'
-                },
-                {
                     "EmailAddress4": "{{Contact}}"
                 },
                 {
