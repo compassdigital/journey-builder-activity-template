@@ -66,20 +66,15 @@ define([
     }
 
     function save() {
-        // var postcardURLValue = $('#postcard-url').val();
-        // var postcardTextValue = $('#postcard-text').val();
+        var promocode = $('#promocode').val();
 
         console.log('save()');
-        // payload['arguments'].execute.inArguments = [{
-        //     "tokens": authTokens,
-        //     "emailAddress": "{{InteractionDefaults.Email}}",
-        //     "email": "{{Contact}}",
-        //     "e": "{{Contact.Attribute.JKTest.EmailAddress}}",
-        //     "e2": "{{Contact.Attribute.JKTestList.EmailAddress}}",
-        //     "e3": "{{Contact.Attribute.JKTestList.Email Address}}"
-        // }];
+        payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "PromoCode": promocode
+        }];
         
-        payload['metaData'].isConfigured = true;
+        payload.metaData.isConfigured = true;
 
         console.log(payload);
         connection.trigger('updateActivity', payload);

@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+input {
+    display: block;
+}
+
 .step {
     display: none;
 }

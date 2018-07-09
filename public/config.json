@@ -2,7 +2,7 @@
     "workflowApiVersion": "1.1",
     "metaData": {
         "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
+        "iconSmall": "images/iconSmall.svg",
         "category": "message"
     },
     "type": "REST",
@@ -16,15 +16,18 @@
     "arguments": {
         "execute": {
            "inArguments":[
-				{
-                    "emailAddress": "{{InteractionDefaults.Email}}"
-                },
                 {
-                    "EmailAddress2": "{{Contact.Attribute.JulioTest.EmailAddress}}"
+                    "EmailAddress": "{{Contact.Attribute.JulioTest.EmailAddress}}"
                 },
                 {                   
                     "FirstName": "{{Contact.Attribute.JulioTest.FirstName}}"
-                }								
+                },
+                {                   
+                    "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
+                },
+                {
+                    "PromoCode": ""
+                }						
 			],
           "outArguments": [],
           "url": "https://compassdigital-jb-activity.herokuapp.com/journeybuilder/execute",
