@@ -71,7 +71,10 @@ define([
         console.log('save()');
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
-            "PromoCode": promocode
+            "PromoCode": promocode,
+            "EmailAddress": "{{Contact.Attribute.JulioTest.EmailAddress}}",
+            "FirstName": "{{Contact.Attribute.JulioTest.FirstName}}",
+            "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
         }];
         
         payload.metaData.isConfigured = true;
