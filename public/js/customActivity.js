@@ -26,6 +26,7 @@ define([
     }
 
     function initialize(data) {
+        var promocode = '';
         console.log(data);
         if (data) {
             payload = data;
@@ -44,13 +45,15 @@ define([
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                
-              
+                console.log('key: ' + key, 'val: ' + val);
+                if (key === 'PromoCode'){
+                    promocode = val;
+                }             
             });
         });
 
         if (hasInArguments){
-            $('#promocode').val(payload['arguments'].execute.inArguments['PromoCode']);
+            $('#promocode').val(promocode);
         }
 
         connection.trigger('updateButton', {
