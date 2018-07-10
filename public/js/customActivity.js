@@ -40,9 +40,7 @@ define([
         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
-        console.log(inArguments);
-
+        
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
                 console.log('key: ' + key, 'val: ' + val);
@@ -54,6 +52,7 @@ define([
 
         if (hasInArguments){
             $('#promocode').val(promocode);
+            $('#promocode_current').html(promocode);
         }
 
         connection.trigger('updateButton', {
