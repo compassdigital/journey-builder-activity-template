@@ -49,6 +49,10 @@ define([
             });
         });
 
+        if (hasInArguments){
+            $('#promocode').val(payload['arguments'].execute.inArguments['PromoCode']);
+        }
+
         connection.trigger('updateButton', {
             button: 'next',
             text: 'done',
