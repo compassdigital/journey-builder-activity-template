@@ -14,3 +14,13 @@ input {
 #step1 {
     display: block;
 }
+
+.helptext {
+    display: block;
+    color: #666666;        
+}
+
+.helptext span {
+    font-style: italic;
+    font-weight: bold;
+}
