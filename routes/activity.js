@@ -103,13 +103,35 @@ exports.execute = function (req, res) {
                 clientSecretKey: voucherify_secret
             });
 
-            client.vouchers.get(decodedArgs.PromoCode)
+            // Lets create the customer, if it already exist, it should upsert the information provided
+            var new_customer = {
+                "source_id": decodedArgs.EmailAddress
+            };
+
+            client.customers.create(new_customer)
             .then((result) => {
+                console.log('Voucherify: customer created for ' + decodedArgs.EmailAddress)
                 console.log(result);
+                
+                // once succedded, let's publish the code
+                var params = {
+                    "voucher": decodedArgs.PromoCode,
+                    "customer": {
+                        "source_id": decodedArgs.EmailAddress
+                    }
+                };
+                client.distributions.publish(params)
+                .then((result) => {
+                    console.log('Voucherify: Voucher ' + decodedArgs.PromoCode  + ' Published for customer ' + decodedArgs.EmailAddress);
+                    console.log(result);
+                })
+                .catch((error) => {
+                    console.error("Voucherify Error: %s", error);
+                });
             })
             .catch((error) => {
-                console.error("Error: %s", error);
-            })
+                console.error("Voucherify Error: %s", error);
+            });
 
             res.status(200).send('Execute');
         } else {
