@@ -19,7 +19,6 @@ define([
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
-
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
 
@@ -74,7 +73,6 @@ define([
     function save() {
         var promocode = $('#promocode').val();
 
-        console.log('save()');
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "PromoCode": promocode,
@@ -84,8 +82,7 @@ define([
         }];
         
         payload.metaData.isConfigured = true;
-
-        console.log(payload);
+        
         connection.trigger('updateActivity', payload);
     }
 
