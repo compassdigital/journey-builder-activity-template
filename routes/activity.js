@@ -105,7 +105,10 @@ exports.execute = function (req, res) {
 
             // Lets create the customer, if it already exist, it should upsert the information provided
             var new_customer = {
-                "source_id": decodedArgs.EmailAddress
+                "name" : decodedArgs.FirstName + " " + decodedArgs.LastName,
+                "email" : decodedArgs.EmailAddress,
+                "description" : "Journey Builder created customer",
+                "source_id": decodedArgs.EmailAddress,
             };
 
             client.customers.create(new_customer)
@@ -126,11 +129,11 @@ exports.execute = function (req, res) {
                     console.log(result);
                 })
                 .catch((error) => {
-                    console.error("Voucherify Error: %s", error);
+                    console.error("Voucherify Error - distributions.publish: %s", error);
                 });
             })
             .catch((error) => {
-                console.error("Voucherify Error: %s", error);
+                console.error("Voucherify Error - customers.create: %s", error);
             });
 
             res.status(200).send('Execute');
