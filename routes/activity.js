@@ -115,22 +115,6 @@ exports.execute = function (req, res) {
             .then((result) => {
                 console.log('Voucherify: customer created for ' + decodedArgs.EmailAddress)
                 console.log(result);
-                
-                // once succedded, let's publish the code
-                var params = {
-                    "voucher": decodedArgs.PromoCode,
-                    "customer": {
-                        "source_id": decodedArgs.EmailAddress
-                    }
-                };
-                client.distributions.publish(params)
-                .then((result) => {
-                    console.log('Voucherify: Voucher ' + decodedArgs.PromoCode  + ' Published for customer ' + decodedArgs.EmailAddress);
-                    console.log(result);
-                })
-                .catch((error) => {
-                    console.error("Voucherify Error - distributions.publish: %s", error);
-                });
             })
             .catch((error) => {
                 console.error("Voucherify Error - customers.create: %s", error);
