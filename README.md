@@ -52,13 +52,15 @@ This guide covers Heroku, skip this step if you are familiar on how to deploy a 
 
 ### Configuring Voucherify
 
-All the customers going trhough this Activity (Those who quilified on the Journey) will get created/updated with the following metadata:
+All the customers going through this Activity (Those who quilified on the Journey) will get created/updated with the following metadata:
+
 ```
 "metadata": {
     "origin": "Journey",
     "code": {{PromoCode}}
 }
 ```
+
 Where `{{PromoCode}}` refers to the Promo Code set up in the Activity window.
 
 The next step is to configure Voucherify to create a Customer's segment, then a Voucher code and finally to set up the Validation rules for the Vaucher.
