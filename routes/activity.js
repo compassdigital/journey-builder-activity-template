@@ -111,9 +111,12 @@ exports.execute = function (req, res) {
                 "source_id": decodedArgs.EmailAddress,
                 "metadata": {
                     "origin": "Journey",
-                    "code": decodedArgs.PromoCode
+                    [decodedArgs.PromoCode]: true
                 }
             };
+
+            // var code_key = decodedArgs.PromoCode;
+            // new_customer.metadata[code_key] = true;
 
             client.customers.create(new_customer)
             .then((result) => {

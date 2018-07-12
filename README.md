@@ -57,7 +57,7 @@ All the customers going through this Activity (Those who quilified on the Journe
 ```
 "metadata": {
     "origin": "Journey",
-    "code": {{PromoCode}}
+    {{PromoCode}}: true
 }
 ```
 
@@ -68,7 +68,7 @@ The next step is to configure Voucherify to create a Customer's segment, then a 
 #### Create a Customer Segment
 Go to Customers and add the following two filters:
 * In The criteria dropdown, select `CUSTOM ATTRIBUTES & EVENTS` -> `Metadata`, set the property name to `origin`, set condition to `is` and enter the value `Journey`
-* In The criteria dropdown, select `CUSTOM ATTRIBUTES & EVENTS` -> `Metadata`, set the property name to `code`, set condition to `is` and enter the value of the promocode you have set up in Journey Builder Activity.
+* In The criteria dropdown, select `CUSTOM ATTRIBUTES & EVENTS` -> `Metadata`, set the property name to the promocode name you have created, set condition to `is` and enter the value true.
 * Click on `CREATE SEGMENT`, make sure you select the presented option for auto-update.
 
 #### Create a Voucher Code.
