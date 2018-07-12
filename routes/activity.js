@@ -109,11 +109,15 @@ exports.execute = function (req, res) {
                 "email" : decodedArgs.EmailAddress,
                 "description" : "Journey Builder created customer",
                 "source_id": decodedArgs.EmailAddress,
+                "metadata": {
+                    "origin": "Journey",
+                    "code": decodedArgs.PromoCode
+                }
             };
 
             client.customers.create(new_customer)
             .then((result) => {
-                console.log('Voucherify: customer created for ' + decodedArgs.EmailAddress)
+                console.log('Voucherify: customer created for ' + decodedArgs.EmailAddress);
                 console.log(result);
             })
             .catch((error) => {
