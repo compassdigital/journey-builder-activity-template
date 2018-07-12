@@ -1,13 +1,11 @@
 # Journey Builder Activity Template
-### Starter template for a messaging JB Activity using Node.JS
-
-**NOTE:** This app and the associated code is NOT production quality, its pure purpose is to demonstrate the full flow of custom interactions in Journey Builder
 
 ### Pre-Requisites
 
 * Node.js (if you'd like to test locally)
 * A Marketing Cloud Account with Journey Builder
 * A publicly accessible web server (this template was built using a free [Heroku](https://heroku.com) account with SSL support
+* A [Voucherify](https://app.voucherify.io/#/app/vouchers/) account
 
 ### Getting Started
 
@@ -51,8 +49,34 @@ This guide covers Heroku, skip this step if you are familiar on how to deploy a 
 1. Login into Marketing Cloud and navigate to Journey Builder
 2. You should be able to see your custom activity and drag it into the canvas!
 
-#### Want to learn more?
 
-If you'd like to learn more about building custom Journey Builder Activities and our collection of Custom Activities available to you today, email us at [info@devsutd.com](mailto:info@devsutd.com)
+### Configuring Voucherify
 
-Also, follow us on [LinkedIn](https://www.linkedin.com/company/10701607/) to get the latest updates and great articles about Salesforce Marketing Cloud!
+All the customers going trhough this Activity (Those who quilified on the Journey) will get created/updated with the following metadata:
+```
+"metadata": {
+    "origin": "Journey",
+    "code": {{PromoCode}}
+}
+```
+Where `{{PromoCode}}` refers to the Promo Code set up in the Activity window.
+
+The next step is to configure Voucherify to create a Customer's segment, then a Voucher code and finally to set up the Validation rules for the Vaucher.
+
+#### Create a Customer Segment
+Go to Customers and add the following two filters:
+* In The criteria dropdown, select `CUSTOM ATTRIBUTES & EVENTS` -> `Metadata`, set the property name to `origin`, set condition to `is` and enter the value `Journey`
+* In The criteria dropdown, select `CUSTOM ATTRIBUTES & EVENTS` -> `Metadata`, set the property name to `code`, set condition to `is` and enter the value of the promocode you have set up in Journey Builder Activity.
+* Click on `CREATE SEGMENT`, make sure you select the presented option for auto-update.
+
+#### Create a Voucher Code.
+
+Go to Vouchers and create a new one, here is an example:
+
+* Select a Standalone code
+* Voucher type to Discount, type Amount and set it to any amount value.
+* define the Voucher code, it is important that this code matches the `PromoCode` defined in the Customer Segment and in the Journey Builder Activity
+* Make sure you make this voucher unlimited.
+* Add the following Validation Rules:
+    * Redemptions count per customer is less than or equal to `1`
+    * Customer Segment is `THE_SEGMENT_YOU_CREATED_EARLIER`
