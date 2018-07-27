@@ -25,7 +25,9 @@ define([
     }
 
     function initialize(data) {
-        var promocode = '';
+        var promocode = '',
+        dataextension = '';
+
         console.log(data);
         if (data) {
             payload = data;
@@ -45,13 +47,18 @@ define([
                 console.log('key: ' + key, 'val: ' + val);
                 if (key === 'PromoCode'){
                     promocode = val;
-                }             
+                }
+                if (key === 'DataExtension'){
+                    dataextension = val;
+                }
             });
         });
 
         if (hasInArguments){
             $('#promocode').val(promocode);
             $('#promocode_current').html(promocode);
+            $('#dataextension').val(dataextension);
+            $('#dataextension_current').html(dataextension);
         }
 
         connection.trigger('updateButton', {
@@ -71,14 +78,17 @@ define([
     }
 
     function save() {
-        var promocode = $('#promocode').val();
+        var promocode = $('#promocode').val();       
+        var DataExtension = $('#dataextension').val();
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "PromoCode": promocode,
-            "EmailAddress": "{{Contact.Attribute.JulioTest.EmailAddress}}",
-            "FirstName": "{{Contact.Attribute.JulioTest.FirstName}}",
-            "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
+            "EmailAddress": "{{Contact.Attribute." + DataExtension + ".EmailAddress}}",
+            "FirstName": "{{Contact.Attribute." + DataExtension + ".FirstName}}",
+            "LastName": "{{Contact.Attribute." + DataExtension + ".LastName}}",
+            "PromoCode": promocode,
+            "DataExtension": DataExtension
         }];
         
         payload.metaData.isConfigured = true;

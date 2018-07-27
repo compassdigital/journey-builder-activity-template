@@ -24,9 +24,12 @@
                 },
                 {                   
                     "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
-                },
+                },                
                 {
                     "PromoCode": ""
+                },
+                {
+                    "DataExtension": ""
                 }						
 			],
           "outArguments": [],
