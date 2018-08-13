@@ -72,7 +72,6 @@
         "configModal": {
             "height": 400,
             "width": 1000,
-            "url": "https://assets.compassdigital.org/dev/salesforce/custom_activity/index.html",
           "fullscreen": false
         }
     },
