@@ -88,7 +88,7 @@ define([
             "FirstName": "{{Contact.Attribute." + DataExtension + ".FirstName}}",
             "LastName": "{{Contact.Attribute." + DataExtension + ".LastName}}",            
             "DataExtension": DataExtension,
-            "EmailAddress2": "{{Contact.key}}",
+            "EmailAddress2": "{{Contact.Attribute.EmailAddress}}",
             "EmailAddress3": "{{Contact.InteractionDefaults.EmailAddress}}",
             "EmailAddress4": "{{InteractionDefaults.EmailAddress}}",
             "EmailAddress5": "{{InteractionDefaults.Email}}",            
