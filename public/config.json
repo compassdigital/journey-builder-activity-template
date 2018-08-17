@@ -26,7 +26,7 @@
                     "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
                 },               
                 {
-                    "ContactKey": "{{Contact.Key}}"
+                    "EmailAddress2": "{{Contact.EmailAddress}}"
                 },                
                 {
                     "PromoCode": ""

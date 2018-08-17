@@ -81,27 +81,16 @@ define([
         var promocode = $('#promocode').val();       
         var DataExtension = $('#dataextension').val();
 
-        // payload['arguments'].execute.inArguments = [{
-        //     "tokens": authTokens,
-        //     "PromoCode": promocode,
-        //     "EmailAddress": "{{Contact.Attribute." + DataExtension + ".EmailAddress}}",
-        //     "FirstName": "{{Contact.Attribute." + DataExtension + ".FirstName}}",
-        //     "LastName": "{{Contact.Attribute." + DataExtension + ".LastName}}",            
-        //     "DataExtension": DataExtension,            
-        //     "EmailAddress2": "{{InteractionDefaults.Email}}",
-        //     "EmailAddress3": "{{InteractionDefaults.EmailAddress}}"
-        // }];
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "PromoCode": promocode,
-            "EmailAddress": "{{Contact.Attribute.JulioTest.EmailAddress}}",
-            "FirstName": "{{Contact.Attribute.JulioTest.FirstName}}",
-            "LastName": "{{Contact.Attribute.JulioTest.LastName}}",            
-            "DataExtension": DataExtension,                        
-            "ContactKey": "{{Contact.Key}}"
+            "EmailAddress": "{{Contact.Attribute." + DataExtension + ".EmailAddress}}",
+            "FirstName": "{{Contact.Attribute." + DataExtension + ".FirstName}}",
+            "LastName": "{{Contact.Attribute." + DataExtension + ".LastName}}",           
+            "DataExtension": DataExtension,
+            "EmailAddress2": "{{Contact.EmailAddress}}"
         }];
-        
-        console.log(payload['arguments'].execute.inArguments);
+       
         payload.metaData.isConfigured = true;
         
         connection.trigger('updateActivity', payload);
