@@ -26,17 +26,11 @@
                     "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
                 },
                 {
-                    "EmailAddress2": "{{Contact.Attribute.EmailAddress}}"
+                    "EmailAddress2": "{{InteractionDefaults.Email}}"
                 },
                 {
-                    "EmailAddress3": "{{Contact.InteractionDefaults.EmailAddress}}"
-                },
-                {
-                    "EmailAddress4": "{{InteractionDefaults.EmailAddress}}"
-                },
-                {
-                    "EmailAddress5": "{{InteractionDefaults.Email}}"
-                },
+                    "EmailAddress3": "{{InteractionDefaults.EmailAddress}}"
+                },                
                 {
                     "PromoCode": ""
                 },
