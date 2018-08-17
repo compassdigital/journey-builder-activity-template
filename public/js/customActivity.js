@@ -97,9 +97,8 @@ define([
             "EmailAddress": "{{Contact.Attribute.JulioTest.EmailAddress}}",
             "FirstName": "{{Contact.Attribute.JulioTest.FirstName}}",
             "LastName": "{{Contact.Attribute.JulioTest.LastName}}",            
-            "DataExtension": DataExtension,            
-            "EmailAddress2": "{{InteractionDefaults.Email}}",
-            "EmailAddress3": "{{InteractionDefaults.EmailAddress}}"
+            "DataExtension": DataExtension,                        
+            "EmailAddress2": "{{InteractionDefaults.EmailAddress}}"
         }];
         
         console.log(payload['arguments'].execute.inArguments);
