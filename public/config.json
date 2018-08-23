@@ -24,9 +24,6 @@
                 },
                 {                   
                     "LastName": "{{Contact.Attribute.JulioTest.LastName}}"
-                },               
-                {
-                    "EmailAddress2": "{{Contact.EmailAddress}}"
                 },                
                 {
                     "PromoCode": ""

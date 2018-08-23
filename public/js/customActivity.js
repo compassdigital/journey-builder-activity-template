@@ -87,8 +87,7 @@ define([
             "EmailAddress": "{{Contact.Attribute." + DataExtension + ".EmailAddress}}",
             "FirstName": "{{Contact.Attribute." + DataExtension + ".FirstName}}",
             "LastName": "{{Contact.Attribute." + DataExtension + ".LastName}}",           
-            "DataExtension": DataExtension,
-            "EmailAddress2": "{{Contact.EmailAddress}}"
+            "DataExtension": DataExtension            
         }];
        
         payload.metaData.isConfigured = true;
