@@ -79,6 +79,9 @@ exports.execute = function (req, res) {
     console.log("***** original payload from SMC");
     console.log(req.body.toString());
     
+    console.log("***** headers *****");
+    console.log(req.headers);
+    
     // example on how to decode JWT
     JWT(req.body, process.env.jwtSecret, (err, decoded) => {
         

@@ -32,11 +32,13 @@
                     "DataExtension": ""
                 }						
 			],
-          "outArguments": [],
-          "url": "https://compassdigital-jb-activity.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
+            "outArguments": [],
+            "url": "https://compassdigital-jb-activity.herokuapp.com/journeybuilder/execute",
+            "verb": "POST",
             "body": "",
-            "header": "",
+            "headers": [
+                { "Authorization": "Bearer: eyJhbGciOiJLTVMiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJwcm9tb191bml0X3Rlc3QiLCJzY29wZXMiOiJleGVjdXRlOnByb21vOioiLCJpYXQiOjE1MzY2OTEyNTQsImV4cCI6MTU0NDQ2NzI1NX0.AQICAHh7R1QbF3+WxosbJFTfuTKfFZH+61Oimgx8/bItygMW3wF8ZQwL7Df7iK+/2vUJQS5wAAAA+TCB9gYJKoZIhvcNAQcGoIHoMIHlAgEAMIHfBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDBjiyBuQvNOdhHOY3wIBEICBsUm7434LeNeXRjejMPpYXajGzBreNTCEQrauYxkFykpNct8x3ttGuTmyj+4siYZbHD+wfN5pW6FPRVvCpkv1EQ102eA/62+j60Dov2JOR42cSR9G+GTGBQJZZFr1br9ZeEnNwjQfkHPa97hdNXAcBZ/al3Ii+8jjA3bB5Te8hWtGPQ7LdqCzmradOX1OgOWqdkaNqLnKdoKZF0+b9wBlwkMa9IZHrJ9faMakPjaDgV64vg=="}
+            ],
             "format": "json",
             "useJwt": true,
             "timeout": 10000
